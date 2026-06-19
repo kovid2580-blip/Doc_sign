@@ -1,0 +1,6 @@
+doc_signature/target/
+doc_signature/uploads/
+doc_signature/*.log
+.git/
+.vscode/
+.idea/

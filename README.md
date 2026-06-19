@@ -51,7 +51,13 @@ Build Command: leave empty
 Start Command: leave empty
 ```
 
-If Render shows `failed to read dockerfile: open Dockerfile: no such file or directory`, either set the Root Directory to `backend/doc_signature` or leave Root Directory empty and use the root-level Dockerfile.
+If Render shows `failed to read dockerfile: open Dockerfile: no such file or directory`, make sure the Dockerfile exists inside the selected Root Directory. This repo supports these Root Directory values:
+
+```text
+empty
+backend
+backend/doc_signature
+```
 
 Create a Render PostgreSQL database first, then set these environment variables on the backend service:
 
