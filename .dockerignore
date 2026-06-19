@@ -1,0 +1,8 @@
+backend/doc_signature/target/
+backend/doc_signature/uploads/
+backend/doc_signature/*.log
+frontend/node_modules/
+frontend/dist/
+.git/
+.vscode/
+.idea/
