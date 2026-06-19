@@ -3,6 +3,7 @@ package com.kovid.doc_signature.service;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.kovid.doc_signature.model.Document;
@@ -16,6 +17,9 @@ public class SigningLinkService {
     private final SigningTokenRepository signingTokenRepository;
     private final DocumentRepository documentRepository;
     private final EmailService emailService;
+
+    @Value("${app.frontend-url:http://localhost:5173}")
+    private String frontendUrl;
 
     public SigningLinkService(
             SigningTokenRepository signingTokenRepository,
@@ -45,7 +49,7 @@ public class SigningLinkService {
 
         signingTokenRepository.save(signingToken);
 
-       String link = "http://localhost:5173/sign/" + token;
+       String link = frontendUrl + "/sign/" + token;
 
 emailService.sendSigningEmail(
         signerEmail,
