@@ -40,6 +40,30 @@ The API runs on `http://localhost:8080`.
 
 Mail variables are only needed when generating signing links that send email.
 
+## Render Backend Deployment
+
+Use these Render settings for the Spring Boot backend:
+
+```text
+Runtime: Docker
+Root Directory: backend/doc_signature
+Build Command: leave empty
+Start Command: leave empty
+```
+
+Create a Render PostgreSQL database first, then set these environment variables on the backend service:
+
+```text
+DB_URL=<Render PostgreSQL internal JDBC URL>
+DB_USERNAME=<Render PostgreSQL username>
+DB_PASSWORD=<Render PostgreSQL password>
+JWT_SECRET=<long random secret>
+MAIL_USERNAME=<optional email username>
+MAIL_PASSWORD=<optional email app password>
+```
+
+Render cannot connect to a PostgreSQL database running on your PC, so do not use `localhost` for deployed database settings.
+
 ## Frontend Setup
 
 Run the frontend from `frontend`:
