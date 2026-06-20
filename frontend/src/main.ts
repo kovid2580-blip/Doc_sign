@@ -143,7 +143,7 @@ function renderWorkspace() {
             ? `<div class="preview-head">
                  <div>
                    <h2>${escapeHtml(selectedDocument.fileName)}</h2>
-                   <p>${formatDate(selectedDocument.uploadedAt)} · ${escapeHtml(selectedDocument.status)}</p>
+                   <p>${formatDate(selectedDocument.uploadedAt)} | ${escapeHtml(selectedDocument.status)}</p>
                  </div>
                  <a class="ghost link-button" href="${previewUrl}" target="_blank" rel="noreferrer">Open</a>
                </div>
@@ -165,7 +165,7 @@ function renderDocumentRow(item: DocumentItem) {
       <span class="file-icon">PDF</span>
       <span>
         <strong>${escapeHtml(item.fileName)}</strong>
-        <small>${formatDate(item.uploadedAt)} · ${escapeHtml(item.status)}</small>
+        <small>${formatDate(item.uploadedAt)} | ${escapeHtml(item.status)}</small>
       </span>
     </button>
   `;
