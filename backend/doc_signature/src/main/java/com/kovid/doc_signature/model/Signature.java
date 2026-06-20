@@ -45,6 +45,6 @@ public class Signature {
     private Document document;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "signer_id", nullable = false)
     private User signer;
 }

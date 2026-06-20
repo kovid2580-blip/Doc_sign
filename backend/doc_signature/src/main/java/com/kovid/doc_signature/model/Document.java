@@ -47,7 +47,7 @@ public class Document {
 
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "app_user_id")
     private User owner;
 
 
